@@ -16,7 +16,7 @@ public class If_Else {
         }
 
         boolean amigoDoDono = true;
-        if (idade < 18 & amigoDoDono == false) {
+        if (idade < 18 & !amigoDoDono) {
             System.out.println("Não pode entrar");
         } else {
             System.out.println("Pode entrar");
