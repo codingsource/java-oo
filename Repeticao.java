@@ -9,7 +9,7 @@ public class Repeticao {
         while (idade < 18) {
             System.out.println(idade);
             idade += 1;
-        }
+        -}
 
         System.out.println("__________doWhile_____________________________\n");
 
