@@ -1,12 +1,8 @@
+public
 /**
- * Conta
+ * Operacao
  */
-public class Conta {
-
-    int numero;
-    String dono;
-    double saldo;
-    double limite;
+public class Operacao {
 
     boolean saque(double quantidade) {
         if (this.saldo < quantidade) {
@@ -21,12 +17,12 @@ public class Conta {
         this.saldo += quantidade;
     }
 
-    boolean tranferePara (Conta destino, double valor) {
-       if (!this.saque(valor)) {
-           return false;
-       } else {
-           destino.deposita(valor);
-           return true;
-       }
+    boolean tranferePara(Conta destino, double valor) {
+        if (!this.saque(valor)) {
+            return false;
+        } else {
+            destino.deposita(valor);
+            return true;
+        }
     }
 }
