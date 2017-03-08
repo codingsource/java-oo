@@ -21,8 +21,12 @@ public class Conta {
         this.saldo += quantidade;
     }
 
-    void tranfere (Conta destino, double valor) {
-        this.saldo = this.saldo - valor;
-        destino.saldo += valor;
+    boolean tranferePara (Conta destino, double valor) {
+       if (!this.saque(valor)) {
+           return false;
+       } else {
+           destino.deposita(valor);
+           return true;
+       }
     }
 }

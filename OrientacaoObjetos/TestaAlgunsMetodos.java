@@ -3,23 +3,29 @@
  */
 public class TestaAlgunsMetodos {
     public static void main(String[] args) {
-        //Criando conta
+        Criando conta
         Conta minhaConta;
         minhaConta = new Conta();
 
         Conta c1 = new Conta();
         c1.deposita(100);
 
-        // tem o mesmo comportamento de C1 pois e uma referencia a C1
+        //tem o mesmo comportamento de C1 pois e uma referencia a C1
         Conta c2 =  c1;
         c2.deposita(200);
 
         Conta c4 = new Conta();
         Conta c5 = new Conta();
 
-        c4.deposita(500);
+        c4.deposita(100);
         c5.deposita(500);
-        c4.tranfere(c5, 200);
+        // c4.tranferePara(c5, 200);
+
+        if (c4.tranferePara(c5, 200)) {
+            System.out.println("Transferiu!");
+        } else {
+            System.out.println("Não tranferiu.");
+        }
 
         System.out.println("C4 " + c4.saldo);
         System.out.println("C5 " + c5.saldo);
@@ -61,7 +67,5 @@ public class TestaAlgunsMetodos {
         //deposita R$500
         minhaConta.deposita(500);
         System.out.println(minhaConta.saldo);
-
-
     }
 }
