@@ -11,4 +11,8 @@ public class Conta {
         double novoSaldo = this.saldo - quantidade;
         this.saldo = novoSaldo;
     }
+
+    void deposita(double quantidade) {
+        this.saldo += quantidade;
+    }
 }
