@@ -28,6 +28,23 @@ public class Funcionario {
     }
 
     void demite () {
+        if (this.estaNaEmpresa) {
+            this.estaNaEmpresa = false;            
+        }
+    }
+
+    void mostra () {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("rg: " + this.rg);
+        System.out.println("Departamento: " + this.departamento);
+        System.out.println("Data admissão: " + this.dataAdmissao);
+        System.out.println("Salário: " + this.salario);
+
+        if (this.estaNaEmpresa) {
+            System.out.println("Estado atual: Empregado");
+        }else {
+            System.out.println("Estado atual: Desempregado");
+        }
 
     }
 }

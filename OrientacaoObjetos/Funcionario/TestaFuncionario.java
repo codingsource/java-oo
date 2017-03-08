@@ -18,5 +18,7 @@ public class TestaFuncionario {
         System.out.println("Salário atual: " + funcionario.salario);
         System.out.println("Salário anual: " + funcionario.calculaGanhoAnual());
 
+        funcionario.estaNaEmpresa = false;  
+        funcionario.mostra();
     }
 }
