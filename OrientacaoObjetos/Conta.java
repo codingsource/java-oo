@@ -20,4 +20,9 @@ public class Conta {
     void deposita(double quantidade) {
         this.saldo += quantidade;
     }
+
+    void tranfere (Conta destino, double valor) {
+        this.saldo = this.saldo - valor;
+        destino.saldo += valor;
+    }
 }
