@@ -6,6 +6,7 @@ public class Carro {
     String modelo;
     double velocidadeAtual;
     double velocidadeMaxima;
+    Motor motor;
 
     public Carro (String cor, String modelo, double velocidadeAtual, double velocidadeMaxima) {
         super();

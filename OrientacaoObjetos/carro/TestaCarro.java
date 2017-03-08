@@ -10,6 +10,17 @@ public class TestaCarro {
 
         // acelera carro
         meuCarro.acelera(20);
-        System.out.println(meuCarro.velocidadeAtual);
+
+        Motor motor = new Motor(1500, "107 / 109");
+
+        meuCarro.motor = motor;
+
+        System.out.println("Cor: " + meuCarro.cor);
+        System.out.println("Modelo: " + meuCarro.modelo);
+        System.out.println("Velocidade atual: " + meuCarro.velocidadeAtual);
+        System.out.println("VElocidade maxíma: " + meuCarro.velocidadeMaxima);
+        System.out.println("Potência: " + meuCarro.motor.potencia);
+        System.out.println("Tipo: " + meuCarro.motor.tipo);
+
     }
 }
