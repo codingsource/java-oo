@@ -6,12 +6,12 @@ import java.util.Date;
  * Funcionario
  */
 public class Funcionario {
-    String nome;
-    String departamento;
-    String dataAdmissao;
-    String rg;
-    boolean estaNaEmpresa;
-    double salario;
+    private  String nome;
+    private  String departamento;
+    private  String dataAdmissao;
+    private  String rg;
+    private  boolean estaNaEmpresa;
+    private  double salario;
 
     public String getNome() {
         return this.nome;
