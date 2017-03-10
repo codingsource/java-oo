@@ -5,24 +5,33 @@ public class Empresa {
     private String nome;
     private String cnpj;
     private Funcionario[] empregados;
-    private int contador;
+    private static int contador;
 
-    public  String getNome() {
+    public String getNome() {
         return this.nome;
     }
-
-    public  String getCnpj() {
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getCnpj() {
         return this.cnpj;
     }
-    public  int getcontador() {
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+    public Funcionario getFuncionario(int posicao) {
+        return this.empregados[posicao];
+    }
+    public String getcontador() {
         return this.contador;
     }
 
-    public Empresa(String nome, String cnpj) {
+
+    public Empresa(String nome, String cnpj, int qntEmpregados) {
         this.nome = nome;
         this.cnpj = cnpj;
-        this.empregados = new Funcionario[5];
-        this.contador = 0;
+        this.empregados = new Funcionario[qntEmpregados];
+        this.contador = this.contador + 1;
     }
 
     void mostra() {

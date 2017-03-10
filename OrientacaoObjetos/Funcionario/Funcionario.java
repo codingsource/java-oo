@@ -6,6 +6,7 @@ import java.util.Date;
  * Funcionario
  */
 public class Funcionario {
+    private static int id;
     private  String nome;
     private  String departamento;
     private  String dataAdmissao;
@@ -13,32 +14,61 @@ public class Funcionario {
     private  boolean estaNaEmpresa;
     private  double salario;
 
+    public String getId() {
+        return this.id;
+    }
+
     public String getNome() {
         return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDepartamento() {
         return this.departamento;
     }
 
+    public void setDepartamento(String departamento){
+        this.departamento = departamento;
+    }
+
     public String getDataAdmissao() {
         return this.dataAdmissao;
+    }
+
+    public void setDataAdmissao() {
+        this.dataAdmissao = this.DataAtual();
     }
 
     public String getRg() {
         return this.rg;
     }
 
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
     public double getSalario() {
         return this.salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
     public boolean getEstaNaEmpresa() {
         return this.estaNaEmpresa;
     }
 
+    public void setEstaNaEmpresa(boolean estaNaEmpresa) {
+        this.estaNaEmpresa = estaNaEmpresa;
+    }
+
     public Funcionario(String nome, String departamento, String rg, boolean estaNaEmpresa, double salario) {
         super();
+        this.id = this.id + 1;
         this.nome = nome;
         this.departamento = departamento;
         this.dataAdmissao = this.DataAtual();
@@ -59,7 +89,7 @@ public class Funcionario {
         this.salario += aumento;
     }
 
-    double calculaGanhoAnual() {
+    public void getGanhoAnual() {
         double salarioAnual = this.salario * 12;
         return salarioAnual;
     }

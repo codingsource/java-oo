@@ -4,11 +4,10 @@
 public class Conta {
 
     private int numero;
-    private String dono;
-    private String cpf;
     private double saldo;
     private double limite;
     private Cliente titular;
+    private static int totalDeContas;
 
     public int geNumero() {
         return this.numero;
@@ -17,23 +16,7 @@ public class Conta {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
-    public String getDono() {
-        return this.dono;
-    }
 
-    public void setDono(String dono) {
-        this.dono = dono;
-    }
-
-    public String getCpf() {
-        return this.cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-    
     public Double getSaldo() {
         return this.saldo + this.limite;
     }
@@ -48,6 +31,19 @@ public class Conta {
 
     public void setTitular(Cliente titular) {
         this.titular = titular;
+    }
+
+    public static int totalDeContas() {
+        return Conta.totalDeContas;
+    }
+
+    public Conta(Cliente titular, int numero, double saldo, double limite) {
+        this.totalDeContas = this.totalDeContas + 1;
+        super();
+        this.titular = titular;
+        this.numero = numero;
+        this.saldo = saldo;
+        this.limite = limite;
     }
 
     boolean saque(double quantidade) {
