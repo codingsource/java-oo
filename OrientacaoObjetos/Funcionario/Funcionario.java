@@ -1,3 +1,7 @@
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Funcionario
  */
@@ -8,32 +12,65 @@ public class Funcionario {
     String rg;
     boolean estaNaEmpresa;
     double salario;
-    public Funcionario (String nome, String departamento, String dataAdmissao, String rg, boolean estaNaEmpresa, double salario) {
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getDepartamento() {
+        return this.departamento;
+    }
+
+    public String getDataAdmissao() {
+        return this.dataAdmissao;
+    }
+
+    public String getRg() {
+        return this.rg;
+    }
+
+    public double getSalario() {
+        return this.salario;
+    }
+
+    public boolean getEstaNaEmpresa() {
+        return this.estaNaEmpresa;
+    }
+
+    public Funcionario(String nome, String departamento, String rg, boolean estaNaEmpresa, double salario) {
         super();
         this.nome = nome;
         this.departamento = departamento;
-        this.dataAdmissao = dataAdmissao;
+        this.dataAdmissao = this.DataAtual();
         this.rg = rg;
         this.estaNaEmpresa = estaNaEmpresa;
         this.salario = salario;
+    }
+
+    String DataAtual() {
+        Calendar c = Calendar.getInstance();
+        Date data = c.getTime();
+        DateFormat f = DateFormat.getDateInstance(DateFormat.MEDIUM);
+
+        return f.format(data);
     }
 
     void bonifica(double aumento) {
         this.salario += aumento;
     }
 
-    double calculaGanhoAnual () {
+    double calculaGanhoAnual() {
         double salarioAnual = this.salario * 12;
         return salarioAnual;
     }
 
-    void demite () {
+    void demite() {
         if (this.estaNaEmpresa) {
-            this.estaNaEmpresa = false;            
+            this.estaNaEmpresa = false;
         }
     }
 
-    void mostra () {
+    void mostra() {
         System.out.println("Nome: " + this.nome);
         System.out.println("rg: " + this.rg);
         System.out.println("Departamento: " + this.departamento);
@@ -42,7 +79,7 @@ public class Funcionario {
 
         if (this.estaNaEmpresa) {
             System.out.println("Estado atual: Empregado");
-        }else {
+        } else {
             System.out.println("Estado atual: Desempregado");
         }
 
