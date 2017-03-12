@@ -17,11 +17,11 @@ public class Conta {
         this.numero = numero;
     }
 
-    public Double getSaldo() {
+    public double getSaldo() {
         return this.saldo + this.limite;
     }
 
-    public double setLimite(double limite) {
+    public void setLimite(double limite) {
         this.limite = limite;
     }
 
@@ -38,8 +38,8 @@ public class Conta {
     }
 
     public Conta(Cliente titular, int numero, double saldo, double limite) {
-        this.totalDeContas = this.totalDeContas + 1;
         super();
+        this.totalDeContas = this.totalDeContas + 1;
         this.titular = titular;
         this.numero = numero;
         this.saldo = saldo;
@@ -70,5 +70,4 @@ public class Conta {
             return true;
         }
     }
-
 }
