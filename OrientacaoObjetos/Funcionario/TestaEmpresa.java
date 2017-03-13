@@ -1,10 +1,12 @@
+package OrientacaoObjetos.Funcionario;
+
 /**
  * TestaEmpresa
  */
 public class TestaEmpresa {
     public static void main(String[] args) {
 
-        Empresa e = new Empresa("MinhaEmpresa.net", "68.663.363/0001-40");
+        Empresa e = new Empresa("MinhaEmpresa.net","68.663.363/0001-40");
 
         Funcionario f0 = new Funcionario("Cristian Luiz", "Fabrica De Software", "24.213.484", true, 3700.0);
         Funcionario f1 = new Funcionario("Peter Thomas", "Fabrica De Software", "78.534.487", true, 3700.0);

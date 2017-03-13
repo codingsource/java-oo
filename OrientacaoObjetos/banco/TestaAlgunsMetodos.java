@@ -1,9 +1,11 @@
+package OrientacaoObjetos.banco;
+
 /**
  * TestaAlgunsMetodos
  */
 public class TestaAlgunsMetodos {
     public static void main(String[] args) {
-        Criando conta
+        //Criando conta
         Conta minhaConta;
         minhaConta = new Conta();
 
@@ -27,26 +29,26 @@ public class TestaAlgunsMetodos {
             System.out.println("Não tranferiu.");
         }
 
-        System.out.println("C4 " + c4.saldo);
-        System.out.println("C5 " + c5.saldo);
+        System.out.println("C4 " + c4.getSaldo());
+        System.out.println("C5 " + c5.getSaldo());
     
         System.out.println("");
         System.out.println("______________________________________________");
 
 
-        System.out.println("C1 " + c1.saldo);
-        System.out.println("C2 " + c2.saldo);
+        System.out.println("C1 " + c1.getSaldo());
+        System.out.println("C2 " + c2.getSaldo());
 
         c1.deposita(100);
-        System.out.println("C1 " + c1.saldo);
+        System.out.println("C1 " + c1.getSaldo());
 
         c2.saque(200);
-        System.out.println("C1 " + c1.saldo);
-        System.out.println("C2 " + c2.saldo);
+        System.out.println("C1 " + c1.getSaldo());
+        System.out.println("C2 " + c2.getSaldo());
 
         //Alterando valores da conta
-        minhaConta.dono = "Petrick";
-        minhaConta.saldo = 1000.0;
+        minhaConta.titular.setNome("Petrick");
+        minhaConta.deposita(1000.0);
 
         //saca R$2000
         //utlilizando variavel temporaria
@@ -66,6 +68,6 @@ public class TestaAlgunsMetodos {
 
         //deposita R$500
         minhaConta.deposita(500);
-        System.out.println(minhaConta.saldo);
+        System.out.println(minhaConta.getSaldo());
     }
 }

@@ -1,3 +1,5 @@
+package OrientacaoObjetos.Funcionario;
+
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -6,6 +8,7 @@ import java.util.Date;
  * Funcionario
  */
 public class Funcionario {
+    
     private static int id;
     private  String nome;
     private  String departamento;
@@ -14,7 +17,7 @@ public class Funcionario {
     private  boolean estaNaEmpresa;
     private  double salario;
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 
@@ -89,7 +92,7 @@ public class Funcionario {
         this.salario += aumento;
     }
 
-    public void getGanhoAnual() {
+    public double getGanhoAnual() {
         double salarioAnual = this.salario * 12;
         return salarioAnual;
     }

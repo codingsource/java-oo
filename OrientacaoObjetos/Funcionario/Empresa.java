@@ -1,3 +1,5 @@
+package OrientacaoObjetos.Funcionario;
+
 /**
  * Empresa
  */
@@ -6,6 +8,9 @@ public class Empresa {
     private String cnpj;
     private Funcionario[] empregados;
     private static int contador;
+
+    public Empresa(String nome, String cnpj) {
+    }
 
     public String getNome() {
         return this.nome;
@@ -22,7 +27,7 @@ public class Empresa {
     public Funcionario getFuncionario(int posicao) {
         return this.empregados[posicao];
     }
-    public String getcontador() {
+    public int getcontador() {
         return this.contador;
     }
 

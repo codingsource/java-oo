@@ -1,7 +1,7 @@
 /**
  * If_Else
  */
-public class If_Else {
+public class IfElse {
     public static void main(String[] args) {
         boolean condicaoBooleana = true;
         if (condicaoBooleana) {

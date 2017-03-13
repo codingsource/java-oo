@@ -1,73 +1,76 @@
-/**
- * Conta
- */
-public class Conta {
+    package OrientacaoObjetos.banco;
 
-    private int numero;
-    private double saldo;
-    private double limite;
-    private Cliente titular;
-    private static int totalDeContas;
+    /**
+     * Conta
+     */
+    public class Conta {
 
-    public int geNumero() {
-        return this.numero;
-    }
+        private String agencia;
+        private int numero;
+        private double saldo;
+        private double limite;
+        protected Cliente titular;
+        private static int totalDeContas;
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
 
-    public double getSaldo() {
-        return this.saldo + this.limite;
-    }
+        public int geNumero() { return this.numero; }
 
-    public void setLimite(double limite) {
-        this.limite = limite;
-    }
+        public void setNumero(int numero) { this.numero = numero; }
 
-    public Cliente getTitular() {
-        return this.titular;
-    }
+        public double getSaldo() {
+            return this.saldo + this.limite;
+        }
 
-    public void setTitular(Cliente titular) {
-        this.titular = titular;
-    }
+        public void setLimite(double limite) {
+            this.limite = limite;
+        }
 
-    public static int totalDeContas() {
-        return Conta.totalDeContas;
-    }
+        public Cliente getTitular() {
+            return this.titular;
+        }
 
-    public Conta(Cliente titular, int numero, double saldo, double limite) {
-        super();
-        this.totalDeContas = this.totalDeContas + 1;
-        this.titular = titular;
-        this.numero = numero;
-        this.saldo = saldo;
-        this.limite = limite;
-    }
+        public void setTitular(Cliente titular) {
+            this.titular = titular;
+        }
 
-    boolean saque(double quantidade) {
-        if (this.saldo < quantidade || quantidade > this.saldo + this.limite) {
-            System.out.println("Saldo insuficiente");
-            return false;
-        } else {
-            this.saldo = this.saldo - quantidade;
-            return true;
+        public static int totalDeContas() {
+            return Conta.totalDeContas;
+        }
+
+        public Conta() {
+            super();
+        }
+        public Conta(Cliente titular, int numero, double saldo, double limite) {
+            super();
+            this.totalDeContas = this.totalDeContas + 1;
+            this.titular = titular;
+            this.numero = numero;
+            this.saldo = saldo;
+            this.limite = limite;
+        }
+
+        boolean saque(double quantidade) {
+            if (this.saldo < quantidade || quantidade > this.saldo + this.limite) {
+                System.out.println("Saldo insuficiente");
+                return false;
+            } else {
+                this.saldo = this.saldo - quantidade;
+                return true;
+            }
+        }
+
+        void deposita(double quantidade) {
+            if (quantidade % 2 == 0) {
+                this.saldo += quantidade;
+            }
+        }
+
+        boolean tranferePara(Conta destino, double valor) {
+            if (!this.saque(valor)) {
+                return false;
+            } else {
+                destino.deposita(valor);
+                return true;
+            }
         }
     }
-
-    void deposita(double quantidade) {
-        if (quantidade % 2 == 0) {
-            this.saldo += quantidade;
-        }
-    }
-
-    boolean tranferePara(Conta destino, double valor) {
-        if (!this.saque(valor)) {
-            return false;
-        } else {
-            destino.deposita(valor);
-            return true;
-        }
-    }
-}

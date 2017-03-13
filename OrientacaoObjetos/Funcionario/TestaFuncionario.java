@@ -1,3 +1,5 @@
+package OrientacaoObjetos.Funcionario;
+
 /**
  * TestaFuncionario
  */
@@ -7,10 +9,10 @@ public class TestaFuncionario {
 
         funcionario.bonifica(750.23);
 
-        System.out.println("Salário atual: " + funcionario.salario);
-        System.out.println("Salário anual: " + funcionario.calculaGanhoAnual());
+        System.out.println("Salário atual: " + funcionario.getSalario());
+        System.out.println("Salário anual: " + funcionario.getGanhoAnual());
 
-        funcionario.estaNaEmpresa = false;  
+        funcionario.setEstaNaEmpresa(false);
         funcionario.mostra();
     }
 }
