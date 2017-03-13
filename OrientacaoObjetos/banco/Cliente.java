@@ -9,6 +9,14 @@ public class Cliente {
     private String cpf;
     private int idade;
 
+    public Cliente(String nome, String sobrenome, String cpf, int idade) {
+        super();
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.idade = idade;
+    }
+
     public String getNome() {
         return this.nome;
     }
@@ -25,9 +33,7 @@ public class Cliente {
         this.sobrenome = sobrenome;
     }
 
-    public String getCpf() {
-        return this.cpf;
-    }
+    public String getCpf() { return this.cpf;  }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
@@ -38,14 +44,6 @@ public class Cliente {
     }
 
     public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public Cliente(String nome, String sobrenome, String cpf, int idade) {
-        super();
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.cpf = cpf;
         this.idade = idade;
     }
 

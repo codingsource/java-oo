@@ -8,20 +8,32 @@ public class TestaAlgunsMetodos {
         //Criando conta
         Conta minhaConta;
         minhaConta = new Conta();
+//        minhaConta.titular.setNome("Logan");
+//        minhaConta.setTitular("Teste");
+
+        Cliente c = new Cliente("Peter", "Thomas", "9.999.9999", 27);
+        minhaConta.setTitular(c);
+        String titular = minhaConta.getTitular();
+
+        System.out.println(titular);
 
         Conta c1 = new Conta();
         c1.deposita(100);
+//        c1.titular.setNome("Wolverrine");
 
         //tem o mesmo comportamento de C1 pois e uma referencia a C1
         Conta c2 =  c1;
         c2.deposita(200);
+//        c2.titular.setNome("Xavier");
 
         Conta c4 = new Conta();
-        Conta c5 = new Conta();
-
-        c4.deposita(100);
-        c5.deposita(500);
         // c4.tranferePara(c5, 200);
+        c4.deposita(100);
+//        c4.titular.setNome("Zeca Urubu");
+
+        Conta c5 = new Conta();
+        c5.deposita(500);
+//        c5.titular.setNome("Leoncio");
 
         if (c4.tranferePara(c5, 200)) {
             System.out.println("Transferiu!");
@@ -31,7 +43,7 @@ public class TestaAlgunsMetodos {
 
         System.out.println("C4 " + c4.getSaldo());
         System.out.println("C5 " + c5.getSaldo());
-    
+
         System.out.println("");
         System.out.println("______________________________________________");
 
@@ -47,7 +59,7 @@ public class TestaAlgunsMetodos {
         System.out.println("C2 " + c2.getSaldo());
 
         //Alterando valores da conta
-        minhaConta.titular.setNome("Petrick");
+//        minhaConta.titular.setNome("Petrick");
         minhaConta.deposita(1000.0);
 
         //saca R$2000

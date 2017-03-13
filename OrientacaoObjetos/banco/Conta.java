@@ -2,6 +2,8 @@
 
     /**
      * Conta
+     * @author Peter Thomas
+     *
      */
     public class Conta {
 
@@ -25,12 +27,12 @@
             this.limite = limite;
         }
 
-        public Cliente getTitular() {
-            return this.titular;
+        public String getTitular() {
+            return this.titular.getNome();
         }
 
-        public void setTitular(Cliente titular) {
-            this.titular = titular;
+        public void setTitular(Cliente c) {
+            this.titular = c ;
         }
 
         public static int totalDeContas() {
@@ -59,6 +61,11 @@
             }
         }
 
+
+        /*
+        * Metodo que incrementa o saldo.
+        * @param quantidade
+        * */
         void deposita(double quantidade) {
             if (quantidade % 2 == 0) {
                 this.saldo += quantidade;
